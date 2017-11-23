@@ -11,7 +11,11 @@ public:
 	float get_y() const;
 	void set_x(float _x_);
 	void set_y(float _y_);
+
 	Point operator +(const Point &data) const;
 	Point& operator +=( const Point &data);
+	Point operator *(float koef) const;
+	Point& operator *=(float koef);
+
 	~Point();
 };

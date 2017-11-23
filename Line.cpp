@@ -10,6 +10,9 @@ Line::Line(Point _A_, Point _B_)
 	A = _A_;
 	B = _B_;
 }
+Line::Line()
+{
+}
 
 float Line::distance()
 {
