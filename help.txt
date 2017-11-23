@@ -1,0 +1,8 @@
+--p new ;
+
+--p move_x ;
+--p move_y ;
+
+--p move_point ;
+--p zoom ;
+--c draw ;

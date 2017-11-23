@@ -27,7 +27,8 @@ void Line::draw_line() const
 	POINT op;
 	HWND Desc = GetConsoleWindow();
 	HDC hDC = GetDC(Desc);
-	SelectObject(hDC, GetStockObject(WHITE_PEN));
+	HPEN pen = CreatePen(PS_SOLID, 2, RGB(255, 0, 0));
+	SelectObject(hDC, pen);
 	MoveToEx(hDC, A.get_x()+600, fabs(A.get_y()-300), &op);
 	LineTo(hDC, B.get_x()+600, fabs(B.get_y()-300));
 	ReleaseDC(Desc, hDC);
