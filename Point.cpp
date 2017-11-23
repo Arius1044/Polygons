@@ -28,8 +28,6 @@ void Point::set_y(float _y_)
 	y = _y_;
 }
 
-//////////////////////////////////////////////
-
 
 Point Point::operator + (const Point &data) const
 {
@@ -50,6 +48,22 @@ Point& Point::operator +=(const Point &data)
 	return *this;
 }
 
+Point Point::operator *(float koef) const
+{
+	Point res(*this);
+
+	res.set_x(res.get_x() * koef);
+	res.set_y(res.get_y() * koef);
+
+	return res;
+}
+Point& Point::operator *=(float koef)
+{
+	x *= koef;
+	y *= koef;
+
+	return *this;
+}
 
 
 Point::~Point()
