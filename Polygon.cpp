@@ -109,32 +109,60 @@ Poly& Poly::operator +=(const Point &data)
 	return *this;
 }
 
-//Poly& Poly::operator *=(double koef)
-//{
-//	Point centr;
-//
-//	float x = 0, y = 0;
-//
-//	for (int i = 0; i < count; i++)
-//	{
-//		Point A = lines[i]->get_A();
-//		x += A.get_x();
-//		y += A.get_y();
-//	}
-//
-//	centr.set_x(x / 4);
-//	centr.set_y(y / 4);
-//
-//	for (int i = 0; i < count; i++)
-//	{
-//		Point A = get_line(i).get_A();
-//		Point B = get_line(i).get_B();
-//		Line line(A, B);
-//		set_line(i, line);
-//	}
-//
-//	return *this;
-//}
+Poly& Poly::operator *=(float koef)
+{
+	Point centr;
+
+	float x = 0, y = 0;
+
+	for (int i = 0; i < count; i++)
+	{
+		Point A = lines[i].get_A();
+		x += A.get_x();
+		y += A.get_y();
+	}
+
+	centr.set_x(x / 4);
+	centr.set_y(y / 4);
+
+	for (int i = 0; i < count; i++)
+	{
+		Point A = centr + (get_line(i).get_A() + centr*(-1))*koef;
+		Point B = centr + (get_line(i).get_B() + centr*(-1))*koef;
+		Line line(A, B);
+		lines[i] = line;
+	}
+
+	return *this;
+}
+
+Poly Poly::operator *(float koef) const
+{
+	Poly res(*this);
+	Point centr;
+
+	float x = 0, y = 0;
+
+	for (int i = 0; i < count; i++)
+	{
+		Point A = lines[i].get_A();
+		x += A.get_x();
+		y += A.get_y();
+	}
+
+	centr.set_x(x / 4);
+	centr.set_y(y / 4);
+
+	for (int i = 0; i < count; i++)
+	{
+		Point A = centr + (get_line(i).get_A() + centr*(-1))*koef;
+		Point B = centr + (get_line(i).get_B() + centr*(-1))*koef;
+		Line line(A, B);
+		res.lines[i] = line;
+	}
+
+	return res;
+}
 
 void Poly::print_points() const
 {

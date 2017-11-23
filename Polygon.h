@@ -16,7 +16,8 @@ public:
 	Line get_line(int i) const;
 	Poly operator +(const Point &data) const;
 	Poly& operator +=(const Point &data);
-	//Poly& operator *=(double koef);
+	Poly& operator *=(float koef);
+	Poly operator *(float koef) const;
 	Poly& operator = (const Poly &obj);
 	void print_points() const;
 	void draw() const;
