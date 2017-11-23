@@ -8,10 +8,12 @@ using namespace std;
 int main()
 {
 	Poly a(3);
-	Point z(-100, 100);
-	a += z;
-	a.draw();
-	
+	Poly z(4);
+	Poly b;
+	Point s(100, 100);
+	b = a+s+s;
+	z += s;
+	z.draw();
 	system("pause");
 	return 0;
 }

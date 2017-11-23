@@ -7,6 +7,7 @@ private:
 	Point A, B;
 public:
 	Line(Point _A_, Point _B_);
+	Line();
 	float distance();
 	~Line();
 	void draw_line() const;
