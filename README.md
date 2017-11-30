@@ -38,7 +38,7 @@ LIST OF COMMANDS
 
 LIST OF PARTICIPANTS
 
-   Arrius - polygon, line, point, devide and menu, draw.
-   Jullia - operator +, operator + =.
-   hajkahajka- operator *, operator * =.
-   Stiven - operator =, menu.
+  Arrius - polygon, line, point, devide and menu, draw.
+  Jullia - operator +, operator + =.
+  hajkahajka- operator *, operator * =.
+  Stiven - operator =, menu.
